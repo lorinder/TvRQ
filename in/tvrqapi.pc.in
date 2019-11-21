@@ -1,0 +1,9 @@
+prefix=@CMAKE_INSTALL_PREFIX@
+libdir=${prefix}/@INSTALL_LIB_DIR@
+includedir=${prefix}/@INSTALL_INCLUDE_DIR@
+
+Name: tvrqapi
+Description: TvRQ implementation of a RaptorQ codec
+Version: @PROJECT_VERSION@
+Libs: -L${libdir} -ltvrqapi
+Cflags: -I${includedir}
