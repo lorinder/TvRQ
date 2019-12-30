@@ -2,8 +2,13 @@ TvRQ:  Test vector RaptorQ
 ==========================
 
 This is the RaptorQ version that's based on simple Gaussian Elimination;
-used to generate test data.  This version is not optimized for
-performance.
+used to generate test data. TvRQ is a test vector implementation of RaptorQ 
+that is meant to test for compliance (correct encoding and decoding) and is 
+not implemented to be fast, and in fact it is a quite slow implementation 
+of RaptorQ. 
+
+For a compliant and faster implementation please refer to CodornicesRq 
+available here: https://www.codornices.info/
 
 Configuration & Building
 ------------------------
