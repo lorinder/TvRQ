@@ -40,8 +40,7 @@ To install the TvRQ libraries to be discovered easily by other software, do:
 	$ sudo cmake --build . --target install
 
 If all works out smoothly, this builds the tvrq dynamic library
-(libtvrq.so on Linux), as well as a number of test tools called test_*
-or testi_*
+(libtvrq.so on Linux), as well as a number of test tools.
 
 Optional Components
 -------------------
