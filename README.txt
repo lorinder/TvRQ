@@ -7,8 +7,8 @@ that is meant to test for compliance (correct encoding and decoding) and is
 not implemented to be fast, and in fact it is a quite slow implementation 
 of RaptorQ. 
 
-For a compliant and faster implementation please refer to CodornicesRq 
-available here: https://www.codornices.info/
+For a compliant and faster implementation please refer to BitRipple Rq
+available here: https://www.bitripple.com
 
 Configuration & Building
 ------------------------
@@ -57,24 +57,26 @@ editing build/CMakeCache.txt accordingly.
 Running the testing tools
 -------------------------
 
-There are two kinds of testing tools, the test_* and the testi_* kind.
-the "i" in testi_ stands for "interactive".  The interactive tools print
-out some output (e.g. a matrix) on screen in response to command line
-arguments.  The user can thus check if the output is as expected.  They
-do not however have a way to sanity-check that output themselves.  The
-test_* tools on the other hand perform some self-consistency checks, and
-return a nonzero exit status in the case of failures.  Short description
-of the tools:
+There are two kinds of testing tools, unit tests and interactive tests.  
+The interactive tools print out some output (e.g. a matrix) on screen in 
+response to command line arguments.  The user can thus check if the output 
+is as expected.  They do not however have a way to sanity-check that 
+output themselves.  The unit test tools on the other hand perform some 
+self-consistency checks, and return a nonzero exit status in the case of 
+failures. 
 
-	test_gf256	- sanity checks the GF(256) finite field operations
-	test_m256v	- sanity checks matrix operations
-	test_rq_api	- sanity check the RQ code via the API (help: -h)
-
-	testi_lt	- display lt rows. Args: <K> <ISI0> <ISI1> ...
-	testi_ldpc	- display ldpc rows. Args: <K>
-	testi_hdpc	- display hdpc rows. Args: <K> <fast-flag>
-	testi_parameters - display parameter computation. Args: <K>
-	testi_rq_matrix	- display the entire RQ matrix. Args <K> <ISI0> ...
+Short description of some of the tools:
+	Unit tests:
+	gf256	- sanity checks the GF(256) finite field operations
+	m256v	- sanity checks matrix operations
+	rq_encdec_match	- sanity check the RQ code via the API (help: -h)
+	
+	Interactive tests:
+	lt	- display lt rows. Args: <K> <ISI0> <ISI1> ...
+	ldpc	- display ldpc rows. Args: <K>
+	hdpc	- display hdpc rows. Args: <K> <fast-flag>
+	parameters - display parameter computation. Args: <K>
+	rq_matrix - display the entire RQ matrix. Args <K> <ISI0> ...
 
 Running the test suite
 ----------------------
@@ -83,6 +85,5 @@ The testsuite is based on ctest.  From the build directory, run
 
 	$ ctest
 
-Takes slightly more than a minute to complete.  Currently, only the
-test_* are added to the test suite.  In the future, might add testi_*
-tools and compare the output with expected values.
+Takes a few seconds to complete.  Currently, only the unit tests are added 
+to the test suite.  
